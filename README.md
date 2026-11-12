@@ -51,6 +51,11 @@ curl -X POST localhost:8000/v1/search -H "Content-Type: application/json" \
 
 ## Deploy (Azure Container Apps)
 
+**Status:** not running live. Every push to `main` builds the image, pushes it to GitHub Container
+Registry and smoke-tests `/v1/health` and `/v1/search` inside GitHub Actions, so the deployable
+artifact is checked continuously. The manual workflow below deploys it to Azure Container Apps
+when a subscription is available (it scales to zero, so it stays inside the free monthly grant).
+
 1. Azure for Students (or any subscription): `az group create -n semicon-rag -l southeastasia`
 2. `az ad sp create-for-rbac --name semicon-rag-gh --role contributor --scopes /subscriptions/<id>/resourceGroups/semicon-rag --sdk-auth`
 3. Repository secrets: `AZURE_CREDENTIALS` (that JSON), `AZURE_RG` (`semicon-rag`), `GHCR_PAT`
