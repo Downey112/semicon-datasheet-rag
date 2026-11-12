@@ -1,0 +1,20 @@
+# Public Texas Instruments datasheets (TI makes chips in Melaka). Downloaded by
+# `python -m semirag.sources` into data/; the PDFs are not committed to this repo.
+- part: TCA9548A
+  title: Low-voltage 8-channel I2C switch with reset
+  url: https://www.ti.com/lit/ds/symlink/tca9548a.pdf
+- part: TCA9555
+  title: Low-voltage 16-bit I2C and SMBus I/O expander with interrupt output
+  url: https://www.ti.com/lit/ds/symlink/tca9555.pdf
+- part: TCA9535
+  title: Low-voltage 16-bit I2C and SMBus low-power I/O expander
+  url: https://www.ti.com/lit/ds/symlink/tca9535.pdf
+- part: ADS1115
+  title: 16-bit ADC with internal reference, oscillator and programmable comparator
+  url: https://www.ti.com/lit/ds/symlink/ads1115.pdf
+- part: INA219
+  title: Zero-drift, bidirectional current/power monitor with I2C interface
+  url: https://www.ti.com/lit/ds/symlink/ina219.pdf
+- part: TMP117
+  title: High-accuracy, low-power digital temperature sensor
+  url: https://www.ti.com/lit/ds/symlink/tmp117.pdf
