@@ -1,0 +1,11 @@
+# Render Blueprint: free Docker web service (512 MB RAM, sleeps after 15 min idle, no card).
+# The Docker build downloads the TI datasheets and builds both indexes (build machines have 8 GB);
+# the running service peaks at about 250 MB (measured: model + 2,100-chunk index + searches).
+services:
+  - type: web
+    name: semicon-datasheet-rag
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /v1/health
+    autoDeploy: true
