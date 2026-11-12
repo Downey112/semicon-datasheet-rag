@@ -1,0 +1,10 @@
+.git
+.github
+.venv
+.cache
+.claude
+data
+index
+tests
+eval
+**/__pycache__
