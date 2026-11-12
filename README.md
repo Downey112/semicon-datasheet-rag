@@ -49,6 +49,13 @@ curl -X POST localhost:8000/v1/search -H "Content-Type: application/json" \
      -d '{"question": "TCA9548A address with A2 A1 A0 low", "k": 3}'
 ```
 
+## Deploy on Render (free)
+
+`render.yaml` defines a free Docker web service in Singapore with a health check on `/v1/health`.
+In Render: New → Blueprint → pick this repo. Every push to `main` redeploys. The free instance
+sleeps after 15 minutes idle, so the first request after that takes about a minute.
+Memory: about 250 MB at peak, under the free tier's 512 MB.
+
 ## Deploy (Azure Container Apps)
 
 **Status:** not running live. Every push to `main` builds the image, pushes it to GitHub Container
