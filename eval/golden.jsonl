@@ -1,0 +1,30 @@
+{"id":"d01","part":"TCA9548A","page":3,"question":"On the 8-channel I2C switch, which pin number is assigned to the active-low reset pin (RESET) in the 24-pin VQFN (RGE) package?","answer":"24"}
+{"id":"d02","part":"TCA9548A","page":3,"question":"According to the TCA9548A pin functions table, what is the description for the SCL pin?","answer":"Serial clock bus"}
+{"id":"d03","part":"TCA9548A","page":15,"question":"What 7-bit I2C target address is assigned to the TCA9548A when address pins A2, A1, and A0 are all connected low (L, L, L)?","answer":"112 (decimal), 70 (hexadecimal)"}
+{"id":"d04","part":"TCA9548A","page":15,"question":"What is the 7-bit I2C target address for the 8-channel I2C switch when address pins A2, A1, and A0 are tied high (H, H, H)?","answer":"119 (decimal), 77 (hexadecimal)"}
+{"id":"d05","part":"TCA9548A","page":18,"question":"In the TCA9548A control register, what command corresponds to setting bit B0 to 1?","answer":"Channel 0 enabled"}
+{"id":"d06","part":"TCA9555","page":4,"question":"On the TCA9555 in the WQFN and VQFN packages (RTW, RGE), which pin number is assigned to the interrupt output INT?","answer":"22"}
+{"id":"d07","part":"TCA9555","page":4,"question":"On the 16-bit I2C I/O expander, what pin number is assigned to address line A0 in the RTW and RGE packages?","answer":"18"}
+{"id":"d08","part":"TCA9555","page":23,"question":"For the 16-bit I2C I/O expander with interrupt, what slave address corresponds to address pins A2 low, A1 high, and A0 high (L, H, H)?","answer":"35(decimal),0x23(hexadecimal)"}
+{"id":"d09","part":"TCA9555","page":24,"question":"What command byte in hexadecimal is used to access Configuration Port 0 on the TCA9555?","answer":"0x06"}
+{"id":"d10","part":"TCA9555","page":23,"question":"What is the factory power-up default register value in binary for the TCA9555 Polarity Inversion Port 0 register?","answer":"00000000"}
+{"id":"d11","part":"TCA9535","page":4,"question":"On the TCA9535, which pin number is assigned to address line A1 in the 24-pin RTW and RGE packages?","answer":"23"}
+{"id":"d12","part":"TCA9535","page":4,"question":"What pin number is used for serial clock (SCL) on the TCA9535 in TSSOP and SSOP packages?","answer":"22"}
+{"id":"d13","part":"TCA9535","page":23,"question":"What I2C bus target address is assigned to the 16-bit low-power I/O expander when address pin A2 is high, A1 is low, and A0 is low (H, L, L)?","answer":"36 (decimal), 0x24 (hexadecimal)"}
+{"id":"d14","part":"TCA9535","page":23,"question":"For the low-power 16-bit I2C I/O expander, what hexadecimal command byte selects the Configuration Port 1 register?","answer":"0x07"}
+{"id":"d15","part":"TCA9535","page":23,"question":"What is the power-up default value for the Polarity Inversion Port 1 register on the 16-bit I2C GPIO expander?","answer":"0000 0000"}
+{"id":"d16","part":"ADS1115","page":3,"question":"What is the functional description of the ADDR pin on the precision 16-bit ADC?","answer":"I2C target address select"}
+{"id":"d17","part":"ADS1115","page":3,"question":"On the 16-bit precision delta-sigma ADC with internal reference, which pin number corresponds to serial clock input SCL?","answer":"10"}
+{"id":"d18","part":"ADS1115","page":20,"question":"What is the 7-bit binary I2C target address of the ADS1115 when the ADDR pin is tied to SDA?","answer":"1001010b"}
+{"id":"d19","part":"ADS1115","page":26,"question":"In the 16-bit ADC Config register, what is the default reset value of the programmable gain amplifier field PGA[2:0]?","answer":"010b"}
+{"id":"d20","part":"ADS1115","page":27,"question":"What is the reset value in hexadecimal for the ADS1115 high threshold register Hi_thresh[15:0]?","answer":"7FFFh"}
+{"id":"d21","part":"INA219","page":3,"question":"What I/O type is specified for the IN+ shunt voltage input pin on the INA219?","answer":"Analog Input"}
+{"id":"d22","part":"INA219","page":3,"question":"On the 8-pin SOIC package of the bidirectional current monitor, which pin number is assigned to the positive shunt input IN+?","answer":"8"}
+{"id":"d23","part":"INA219","page":14,"question":"What 7-bit binary slave address is generated for the INA219 when pin A1 is connected to SDA and pin A0 is connected to GND?","answer":"1001000"}
+{"id":"d24","part":"INA219","page":14,"question":"When both address pins A1 and A0 are tied to V S+ on the bidirectional I2C power monitor, what is the resulting slave address?","answer":"1000101"}
+{"id":"d25","part":"INA219","page":18,"question":"What is the default hexadecimal power-on reset value of the INA219 Configuration register?","answer":"399F"}
+{"id":"d26","part":"TMP117","page":4,"question":"On the TMP117 in the DSBGA package, which ball assignment corresponds to the ADD0 address select pin?","answer":"C1"}
+{"id":"d27","part":"TMP117","page":4,"question":"What is the functional description of the ALERT pin on the ultra-high accuracy digital temperature sensor?","answer":"Over temperature alert or data-ready signal"}
+{"id":"d28","part":"TMP117","page":21,"question":"What is the two-wire target address when ADD0 is tied to SCL on the high-accuracy digital temperature sensor?","answer":"1001011x"}
+{"id":"d29","part":"TMP117","page":25,"question":"What is the reset value of the Device_ID register on the TMP117?","answer":"0117h"}
+{"id":"d30","part":"TMP117","page":27,"question":"In the configuration register of the precision temperature sensor, what bit field name (bits 6:5) controls the conversion averaging modes?","answer":"AVG[1:0]"}
