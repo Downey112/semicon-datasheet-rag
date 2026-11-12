@@ -1,0 +1,35 @@
+# Manual deploy to Azure Container Apps. Needs these repository secrets (see README "Deploy"):
+#   AZURE_CREDENTIALS  service-principal JSON from `az ad sp create-for-rbac --sdk-auth`
+#   AZURE_RG           resource group name
+#   GHCR_PAT           a GitHub token with read:packages (the image is in a private registry)
+name: Deploy to Azure Container Apps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check secrets are configured
+        env:
+          CREDS: ${{ secrets.AZURE_CREDENTIALS }}
+        run: test -n "$CREDS" || { echo "::error::AZURE_CREDENTIALS is not set"; exit 1; }
+      - uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Create or update the container app (scales to zero when idle)
+        run: |
+          az extension add --name containerapp --upgrade --only-show-errors
+          az containerapp up \
+            --name semicon-datasheet-rag \
+            --resource-group "${{ secrets.AZURE_RG }}" \
+            --location southeastasia \
+            --image ghcr.io/downey112/semicon-datasheet-rag:latest \
+            --registry-server ghcr.io \
+            --registry-username downey112 \
+            --registry-password "${{ secrets.GHCR_PAT }}" \
+            --ingress external --target-port 8000
+          az containerapp update --name semicon-datasheet-rag --resource-group "${{ secrets.AZURE_RG }}" \
+            --min-replicas 0 --max-replicas 1 --cpu 1.0 --memory 2.0Gi
+          echo "URL: https://$(az containerapp show -n semicon-datasheet-rag -g "${{ secrets.AZURE_RG }}" --query properties.configuration.ingress.fqdn -o tsv)"
