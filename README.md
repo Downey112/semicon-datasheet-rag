@@ -7,6 +7,14 @@ Search over semiconductor datasheets that **keeps pin and register tables intact
 against plain text chunking on the same retriever. Six public Texas Instruments datasheets
 (TI manufactures in Melaka): TCA9548A, TCA9555, TCA9535, ADS1115, INA219, TMP117.
 
+**Live API:** https://semicon-datasheet-rag.onrender.com/docs (free tier: the first request after
+15 idle minutes takes about a minute to wake the service)
+
+```bash
+curl -X POST https://semicon-datasheet-rag.onrender.com/v1/search -H "Content-Type: application/json" \
+     -d '{"question": "TCA9548A I2C address when A2 A1 A0 are all low", "k": 1}'
+```
+
 ## Results
 
 30 golden questions (pins, I2C addresses, register values), same hybrid retriever for both
@@ -56,9 +64,9 @@ In Render: New → Blueprint → pick this repo. Every push to `main` redeploys.
 sleeps after 15 minutes idle, so the first request after that takes about a minute.
 Memory: about 250 MB at peak, under the free tier's 512 MB.
 
-## Deploy (Azure Container Apps)
+## Deploy (Azure Container Apps, alternative)
 
-**Status:** not running live. Every push to `main` builds the image, pushes it to GitHub Container
+**Status:** not used (the live service runs on Render, above). Every push to `main` builds the image, pushes it to GitHub Container
 Registry and smoke-tests `/v1/health` and `/v1/search` inside GitHub Actions, so the deployable
 artifact is checked continuously. The manual workflow below deploys it to Azure Container Apps
 when a subscription is available (it scales to zero, so it stays inside the free monthly grant).
